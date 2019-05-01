@@ -28,7 +28,18 @@ defmodule MinimalServer.Endpoint do
   def start_link(_opts) do
     with {:ok, [port: port] = config} <- Application.fetch_env(:minimal_server, __MODULE__) do
       Logger.info("starting server at http://localhost:#{port}/")
-      Plug.Cowboy.http(__MODULE__, config, port: System.get_env("PORT") || 4000)
+
+      ip =
+        if(Application.get_env(:minimal_server, :environment) === :prod) do
+          {0, 0, 0, 0}
+        else
+          {127, 0, 0, 1}
+        end
+
+      Plug.Cowboy.http(__MODULE__, config,
+        ip: ip,
+        port: System.get_env("PORT") || 4000
+      )
     end
   end
 end
