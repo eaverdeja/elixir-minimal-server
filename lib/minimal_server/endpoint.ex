@@ -40,7 +40,7 @@ defmodule MinimalServer.Endpoint do
       Logger.info("starting server at http://#{Enum.join(Tuple.to_list(ip), ".")}:#{port}/")
 
       Cowboy.http(__MODULE__, config,
-        ip: ip,
+        # ip: ip,
         port: System.get_env("PORT") || 4000
       )
     end
