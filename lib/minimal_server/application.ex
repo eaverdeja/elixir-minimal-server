@@ -10,6 +10,9 @@ defmodule MinimalServer.Application do
   end
 
   defp opts do
-    [strategy: :one_for_one, name: MinimalServer.Supervisor]
+    [
+      strategy: :one_for_one,
+      name: MinimalServer.Supervisor
+    ]
   end
 end
