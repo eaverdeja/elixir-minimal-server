@@ -1,23 +1,5 @@
-# MinimalServer
+# Minimal Server
 
-> https://blog.lelonek.me/minimal-elixir-http2-server-64188d0c1f3a
+> This repo was made to follow the tutorial by Kamil Lelonek at https://blog.lelonek.me/minimal-elixir-http2-server-64188d0c1f3a
 
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `minimal_server` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:minimal_server, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/minimal_server](https://hexdocs.pm/minimal_server).
-
+The app exposes a single endpoint and returns a simple JSON object from it, no hassle. It was made using Plug, Cowboy and Poison (no Phoenix!). Instructions for installing, running and deploying at Heroku the app can be found at the original tutorial.
